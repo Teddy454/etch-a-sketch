@@ -1,17 +1,22 @@
-// const container = document.querySelector("#container");
-
-const gridHeight = 16;
-const gridWidth = 16;
-
-for (let i = 0; i < gridHeight - 1; i++) {
+function drawGrid(gridSide) {
     const container = document.querySelector("#container");
-    const gridLine = document.createElement("div");
-    gridLine.classList.add("gridLine");
-    for (let i = 0; i < gridWidth - 1; i++) {
+    container.innerHTML = "";
+
+    const squareSize = 500 / gridSide;
+
+    for (let i = 0; i < gridSide * gridSide; i++) {
         const div = document.createElement("div");
         div.classList.add("grid");
-        div.textContent = "Test";
-        gridLine.appendChild(div);
+        div.style.width = `${squareSize}px`;
+        div.style.height = `${squareSize}px`;
+
+        div.addEventListener("mouseenter", () => {
+            div.classList.add("hovered");
+        });
+
+        container.appendChild(div);
     }
-    container.appendChild(gridLine);
 }
+
+const btn = document.querySelector("#btn");
+btn.addEventListener("click", () => drawGrid(prompt("How many squares per side")));
