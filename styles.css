@@ -1,9 +1,68 @@
+body {
+    background-color: #545454;
+}
+
+#page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+}
+
+#header, #footer, #content {
+    width: 100%;
+}
+
+#header, #footer {
+    padding: 25px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #69747c;
+    color: yellow;
+    font-family: "Roboto", sans-serif;
+}
+
+#header {
+    font-size: 42px;
+    font-weight: bold;
+}
+
+#btn {
+    margin: 15px;
+    padding: 15px;
+    font-size: 18px;
+    border: 0;
+    border-radius: 10px;
+}
+
+/* Body and drawing content */
+#content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#outerContainer {
+    border: black solid 1px;
+    border-radius: 25px;
+    padding: 24px 25px 25px 24px;
+    height: 500px;
+    width: 500px;
+    background-color: yellow;
+}
+
 #container {
     display: flex;
     flex-wrap: wrap;
     border: black solid 1px;
     height: 500px;
     width: 500px;
+    background-color: white;
 }
 
 .grid {
@@ -13,4 +72,8 @@
 
 .grid.hovered {
     background-color: grey;
+}
+
+#footer {
+    font-size: 18px;
 }
